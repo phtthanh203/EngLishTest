@@ -1,0 +1,31 @@
+﻿# Build folders
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VS temporary files
+.vs/
+
+# Executables
+*.exe
+*.dll
+
+# Backup files
+*.bak
+
+# Packages folder
+packages/
+
+# NuGet
+*.nupkg
+project.lock.json
+project.fragment.lock.json
+
+# Rider
+.idea/
+*.sln.iml
