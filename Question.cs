@@ -8,11 +8,11 @@ namespace EnglishTest
 {
     internal class Question
     {
+     
         public string Content { get; set; }
         public string[] Answers { get; set; }
 
         public int CorrectAnswerIndex { get; set; }
-
 
 
     }
