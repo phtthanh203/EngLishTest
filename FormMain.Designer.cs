@@ -60,6 +60,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "Tieng Viet";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // FormMain
             // 
@@ -71,6 +72,7 @@
             this.Controls.Add(this.button1);
             this.Name = "FormMain";
             this.Text = "FormMain";
+            this.Load += new System.EventHandler(this.FormMain_Load);
             this.ResumeLayout(false);
 
         }
