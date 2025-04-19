@@ -12,9 +12,18 @@ namespace EnglishTest
         Dictionary<int, int> userAnswers = new Dictionary<int, int>();
         int currentQuestionIndex = 0;
 
+        string selectedLanguage;
+        string selectedLevel;
+
         public Form1()
         {
+            
+        }
+        public Form1(string language, string level)
+        {
             InitializeComponent();
+            selectedLanguage = language;
+            selectedLevel = level;
             this.Load += Form1_Load;
 
             // Title label
@@ -230,14 +239,17 @@ namespace EnglishTest
         private List<Question> LoadQuestionsFromDatabase()
         {
             var questions = new List<Question>();
-            string connectionString = @"Data Source=LAPTOP-VR8TF3S0;Initial Catalog=DB_CauHoi;Integrated Security=True";
-            string query = "SELECT Content, Answer1, Answer2, Answer3, Answer4, CorrectAnswerIndex FROM Questions";
+            string connectionString = @"Data Source=PHTTHANH203;Initial Catalog=DB_CauHoi;Integrated Security=True";
+            string query = "SELECT Content, Answer1, Answer2, Answer3, Answer4, CorrectAnswerIndex FROM Questions WHERE Language = @Language AND Level = @Level";
 
             try
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
+                    cmd.Parameters.AddWithValue("@Language", selectedLanguage);
+                    cmd.Parameters.AddWithValue("@Level", selectedLevel);
+
                     conn.Open();
                     SqlDataReader reader = cmd.ExecuteReader();
                     while (reader.Read())
@@ -247,11 +259,11 @@ namespace EnglishTest
                             Content = reader.GetString(0),
                             Answers = new[]
                             {
-                                reader.GetString(1),
-                                reader.GetString(2),
-                                reader.GetString(3),
-                                reader.GetString(4)
-                            },
+                        reader.GetString(1),
+                        reader.GetString(2),
+                        reader.GetString(3),
+                        reader.GetString(4)
+                    },
                             CorrectAnswerIndex = reader.GetInt32(5)
                         };
                         questions.Add(question);
@@ -266,9 +278,12 @@ namespace EnglishTest
             return questions;
         }
 
+
         private void button3_Click_1(object sender, EventArgs e)
         {
 
         }
+
+      
     }
 }

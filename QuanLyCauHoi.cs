@@ -14,7 +14,7 @@ namespace EnglishTest
 {
     public partial class QuanLyCauHoi : Form
     {
-        string connectionString = @"Data Source=LAPTOP-VR8TF3S0;Initial Catalog=DB_CauHoi;Integrated Security=True";
+        string connectionString = @"Data Source=PHTTHANH203;Initial Catalog=DB_CauHoi;Integrated Security=True";
         public QuanLyCauHoi()
         {
             InitializeComponent();

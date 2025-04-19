@@ -14,6 +14,9 @@ namespace EnglishTest
 
         public int CorrectAnswerIndex { get; set; }
 
+        public string Language { get; set; }
+        public string VietNamese { get; set; }
+
 
     }
 
