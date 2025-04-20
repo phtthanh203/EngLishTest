@@ -34,7 +34,6 @@ namespace EnglishTest
             this.button1 = new Button();
             this.SuspendLayout();
 
-
             this.ClientSize = new Size(650, 400);
             this.BackColor = Color.WhiteSmoke;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
