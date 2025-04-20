@@ -239,7 +239,7 @@ namespace EnglishTest
         private List<Question> LoadQuestionsFromDatabase()
         {
             var questions = new List<Question>();
-            string connectionString = @"Data Source=PHTTHANH203;Initial Catalog=DB_CauHoi;Integrated Security=True";
+            string connectionString = @"Data Source=LAPTOP-VR8TF3S0;Initial Catalog=DB_CauHoi;Integrated Security=True";
             string query = "SELECT Content, Answer1, Answer2, Answer3, Answer4, CorrectAnswerIndex FROM Questions WHERE Language = @Language AND Level = @Level";
 
             try
@@ -284,6 +284,9 @@ namespace EnglishTest
 
         }
 
-      
+        private void Form1_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
